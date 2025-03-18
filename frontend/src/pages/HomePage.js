@@ -99,7 +99,7 @@ const HomePage = () => {
     } else {
       setAvailableSlots([]);
     }
-  }, [selectedService, selectedDate, fetchAvailableSlots]);
+  }, [selectedService, selectedDate]);
 
   const fetchServices = async () => {
     try {
