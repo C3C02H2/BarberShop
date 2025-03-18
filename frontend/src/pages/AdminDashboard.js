@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { FaCalendarAlt, FaImages, FaClock, FaCut, FaUser, FaMoneyBillWave, FaChartBar } from 'react-icons/fa';
+import { FaCalendarAlt, FaImages, FaCut, FaUser, FaMoneyBillWave } from 'react-icons/fa';
 import AdminLayout from '../components/AdminLayout';
 import { getAppointments, getGalleryImages, getServices, getAppointmentStats } from '../utils/api';
 

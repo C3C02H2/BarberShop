@@ -85,7 +85,7 @@ export const login = async (credentials) => {
     const response = await API.post('/auth/login', credentials);
     console.log('Login response received', response.data);
     
-    const { access_token, user, is_admin } = response.data;
+    const { access_token, _user, _is_admin } = response.data;
     
     if (access_token) {
       console.log('Storing token and setting authorization header');

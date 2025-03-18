@@ -6,7 +6,6 @@ import { format } from 'date-fns';
 import { FaRegClock, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaClock, FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaCut, FaBath, FaCheck } from 'react-icons/fa';
 import CustomNavbar from '../components/Navbar';
 import { getServices, getGalleryImages, createAppointment, getAvailableSlots, createReview, getReviews } from '../utils/api';
-import { Link } from 'react-router-dom';
 import '../styles/home.css';
 
 // API URL за достъп до изображения
@@ -54,8 +53,8 @@ const HomePage = () => {
     }
   ];
 
-  // Временни снимки за галерията (ще се заменят с данни от API)
-  const barberGalleryImages = [
+  // Временни снимки за галерията (използват се като резервни данни)
+  const fallbackGalleryImages = [
     {
       id: 1,
       file_path: "../assets/gallery1.jpg",
@@ -100,7 +99,7 @@ const HomePage = () => {
     } else {
       setAvailableSlots([]);
     }
-  }, [selectedService, selectedDate]);
+  }, [selectedService, selectedDate, fetchAvailableSlots]);
 
   const fetchServices = async () => {
     try {

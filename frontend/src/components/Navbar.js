@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll';
-import { FaUser, FaCalendarAlt, FaCut, FaRegClock } from 'react-icons/fa';
+import { FaUser, FaCut, FaRegClock } from 'react-icons/fa';
 import '../styles/navbar.css';
 
 const CustomNavbar = () => {
