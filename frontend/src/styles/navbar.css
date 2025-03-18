@@ -1,0 +1,250 @@
+@import './variables.css';
+
+.custom-navbar {
+  padding: 1.25rem 0;
+  transition: all var(--transition-normal);
+  background-color: var(--primary-dark);
+  border-bottom: 3px solid var(--secondary-color);
+}
+
+.custom-navbar.scrolled {
+  padding: 0.75rem 0;
+  background-color: var(--white);
+  box-shadow: var(--shadow-md);
+}
+
+/* Бръснарски стълб мини */
+.barber-pole-mini {
+  position: relative;
+  width: 22px;
+  height: 44px;
+  border-radius: 11px;
+  overflow: hidden;
+  margin-right: 12px;
+  border: 2px solid var(--black);
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.barber-pole-mini .pole-stripes {
+  position: absolute;
+  top: -44px;
+  left: 0;
+  right: 0;
+  height: 132px;
+  background: var(--barber-stripe-gradient-vertical);
+  animation: barberPoleSpin 4s linear infinite;
+}
+
+@keyframes barberPoleSpin {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(44px);
+  }
+}
+
+.navbar-brand-custom {
+  font-family: var(--font-secondary);
+  font-weight: 700;
+  font-size: 1.75rem;
+  color: var(--white);
+  transition: all var(--transition-normal);
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand-custom span {
+  color: var(--secondary-color);
+}
+
+.custom-navbar.scrolled .navbar-brand-custom {
+  color: var(--primary-dark);
+}
+
+.navbar-toggler-custom {
+  border: none;
+  padding: 0;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.hamburger {
+  width: 30px;
+  height: 25px;
+  position: relative;
+  transform: rotate(0deg);
+  transition: .5s ease-in-out;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: var(--white);
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+.custom-navbar.scrolled .hamburger span {
+  background: var(--primary-dark);
+}
+
+.hamburger span:nth-child(1) {
+  top: 0px;
+}
+
+.hamburger span:nth-child(2) {
+  top: 10px;
+}
+
+.hamburger span:nth-child(3) {
+  top: 20px;
+}
+
+.hamburger.open span:nth-child(1) {
+  top: 10px;
+  transform: rotate(135deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+.hamburger.open span:nth-child(3) {
+  top: 10px;
+  transform: rotate(-135deg);
+}
+
+.nav-link-custom {
+  color: var(--white) !important;
+  font-weight: 500;
+  margin: 0 0.5rem;
+  position: relative;
+  padding: 0.5rem 0.75rem !important;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+}
+
+.custom-navbar.scrolled .nav-link-custom {
+  color: var(--neutral-dark) !important;
+}
+
+.nav-icon-container {
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 6px;
+  color: var(--secondary-color);
+}
+
+.nav-icon {
+  font-size: 14px;
+}
+
+.nav-link-custom::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--secondary-color);
+  transition: all var(--transition-normal);
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+.nav-link-custom:hover,
+.nav-link-custom.active {
+  color: var(--secondary-color) !important;
+}
+
+.nav-link-custom:hover::after,
+.nav-link-custom.active::after {
+  width: 70%;
+  opacity: 1;
+}
+
+.admin-link {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--white) !important;
+}
+
+.custom-navbar.scrolled .admin-link {
+  color: var(--neutral-dark) !important;
+}
+
+.nav-link-booking {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background-color: var(--secondary-color);
+  color: var(--white) !important;
+  padding: 0.5rem 1.25rem !important;
+  border-radius: var(--radius-md);
+  margin-left: 0.75rem;
+  transition: all var(--transition-normal);
+  font-weight: 500;
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-link-booking:hover {
+  background-color: var(--secondary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.icon {
+  margin-right: 0.25rem;
+}
+
+/* Барбърска лента */
+.barber-stripe {
+  height: 8px;
+  background: var(--barber-stripe-gradient);
+  margin: 2rem 0;
+  border-radius: var(--radius-sm);
+}
+
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background-color: var(--white);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    margin-top: 0.5rem;
+    box-shadow: var(--shadow-md);
+    border-top: 3px solid var(--secondary-color);
+  }
+  
+  .nav-link-custom,
+  .custom-navbar.scrolled .nav-link-custom,
+  .admin-link,
+  .custom-navbar.scrolled .admin-link {
+    color: var(--neutral-dark) !important;
+    padding: 0.75rem 1rem !important;
+    margin: 0.25rem 0;
+  }
+  
+  .nav-link-custom::after {
+    bottom: 0.5rem;
+  }
+  
+  .nav-link-booking {
+    margin: 0.5rem 0 0;
+    text-align: center;
+    justify-content: center;
+  }
+} 
